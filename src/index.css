@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-headline: "Geist", sans-serif;
+  --font-body: "JetBrains Mono", monospace;
+
+  /* Colors */
+  --color-primary: #fbbf24;
+  --color-secondary: #a7f3d0;
+  --color-tertiary: #fffbf0;
+  --color-neutral: #1e293b;
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-white bg-[#111C2D];
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  img {
+    @apply w-full;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+}
