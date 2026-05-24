@@ -13,6 +13,7 @@
   --color-secondary: #a7f3d0;
   --color-tertiary: #fffbf0;
   --color-neutral: #1e293b;
+  --color-text: #d3c5ac;
 }
 
 @layer base {

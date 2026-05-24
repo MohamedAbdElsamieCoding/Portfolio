@@ -1,15 +1,25 @@
-// import Features from "./Features/Features";
-// import Footer from "./Footer/Footer";
-// import HeroSection from "./HeroSection/HeroSection";
+import About from "./About/About";
+import Contact from "./Contact/Contact";
+import Footer from "./Footer/Footer";
+import HeroSection from "./HeroSection/HeroSection";
 import Navbar from "./Navbar/Navbar";
+import Skills from "./Skills/Skills";
+import Work from "./Work/Work";
 
 const HomePage = () => {
   return (
     <>
-      <Navbar />
-      {/* <HeroSection />
-      <Features />
-      <Footer /> */}
+      <header>
+        <Navbar />
+      </header>
+      <main className="flex flex-col pt-10">
+        <HeroSection />
+        <Work />
+        <Skills />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
     </>
   );
 };
