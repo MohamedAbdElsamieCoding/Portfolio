@@ -41,7 +41,7 @@ const Work = () => {
             <p className="text-secondary">TypeScript</p>
           </div>
           <div className="flex flex-col gap-2">
-            <h1 className="text-[#D8E3FB] font-medium text-2xl font-headline">
+            <h1 className="text-second-text font-medium text-2xl font-headline">
               Nidaa Prayer Times App
             </h1>
             <div className="w-16 h-0.5 bg-secondary" />
@@ -80,7 +80,7 @@ const Work = () => {
             <p className="text-secondary">TypeScript</p>
           </div>
           <div className="flex flex-col gap-2">
-            <h1 className="text-[#D8E3FB] font-medium text-2xl font-headline">
+            <h1 className="text-second-text font-medium text-2xl font-headline">
               Stellar Store E-commerce
             </h1>
             <div className="w-16 h-0.5 bg-secondary" />

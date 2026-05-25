@@ -11,10 +11,10 @@ const HeroSection = () => {
           </p>
         </div>
         <div className="flex flex-col gap-[-1px]">
-          <h1 className="text-7xl font-headline font-bold tracking-[-2.88px] text-[#D8E3FB]">
+          <h1 className="text-7xl font-headline font-bold tracking-[-2.88px] text-second-text">
             Frontend Developer <span className="text-primary">|</span>
           </h1>
-          <h1 className="text-7xl font-headline font-bold tracking-[-2.88px] text-center text-[#D8E3FB]">
+          <h1 className="text-7xl font-headline font-bold tracking-[-2.88px] text-center text-second-text">
             React.js <span className="text-primary">|</span> TypeScript <br />
             Specialist
           </h1>
