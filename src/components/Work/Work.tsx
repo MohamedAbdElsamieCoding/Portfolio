@@ -1,28 +1,54 @@
 import { MdOutlineOpenInNew } from "react-icons/md";
 import { PiBracketsAngleLight } from "react-icons/pi";
-
+import { motion } from "framer-motion";
+import {
+  fadeInUp,
+  slideInLeft,
+  slideInRight,
+  staggerContainer,
+} from "../../animations/variants";
 const Work = () => {
   return (
-    <section
+    <motion.section
       id="work"
-      className="bg-[#081425] flex flex-col justify-center py-40 px-20 gap-20"
+      className="bg-[#081425] flex flex-col justify-center py-20 md:py-40 px-6 md:px-20 gap-12 md:gap-20 w-full"
+      variants={staggerContainer}
+      initial="hidden"
+      animate="visible"
     >
-      <div className="flex justify-between p-4 items-end">
-        <div className="flex flex-col gap-4">
+      <div className="flex flex-col justify-start md:justify-between md:flex-row p-4 md:items-end">
+        <motion.div
+          variants={slideInLeft}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="flex flex-col gap-4"
+        >
           <p className="uppercase font-medium tracking-[1.4px] text-text">
             Selected works
           </p>
-          <h1 className="uppercase font-semibold tracking-[-0.8px] text-5xl">
+          <h1 className="uppercase font-semibold tracking-[-0.8px] text-3xl md:text-5xl">
             Digital Craftsmanship
           </h1>
-        </div>
-        <p className="text-base text-text">
+        </motion.div>
+        <motion.p
+          variants={slideInRight}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-base text-text"
+        >
           A curated collection of interfaces designed <br /> for performance and
           scale.
-        </p>
+        </motion.p>
       </div>
-      <div className="grid grid-cols-2 gap-12">
-        <div className="bg-[#111827] rounded-xl flex flex-col gap-4 overflow-hidden p-6 border border-text/20">
+      <motion.div
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8"
+      >
+        <div className="bg-[#111827] rounded-xl flex flex-col gap-4 overflow-hidden p-4 md:p-6 border border-text/20">
           <div className="relative h-90 overflow-hidden rounded-2xl">
             <img
               src="/bg.jpg"
@@ -37,7 +63,7 @@ const Work = () => {
             <div className="absolute inset-0 bg-black/40 z-20" />
           </div>
 
-          <div className="px-3 py-1 border border-secondary w-fit mx-4 mb-4 rounded-full">
+          <div className="px-3 py-1 border border-secondary w-fit mx-0 md:mx-4 mb-4 rounded-full">
             <p className="text-secondary">TypeScript</p>
           </div>
           <div className="flex flex-col gap-2">
@@ -100,8 +126,8 @@ const Work = () => {
             </button>
           </div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

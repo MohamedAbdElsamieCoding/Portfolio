@@ -1,11 +1,24 @@
+import { motion } from "framer-motion";
+import {
+  slideInLeft,
+  slideInRight,
+  staggerContainer,
+} from "../../animations/variants";
 const About = () => {
   return (
-    <section
+    <motion.section
       id="about"
-      className="bg-[#081425] flex flex-col justify-center py-40 px-20 gap-20 min-h-screen"
+      className="bg-[#081425] flex flex-col justify-center py-20 md:py-40 px-6 md:px-20 gap-12 md:gap-20 min-h-screen w-full"
+      variants={staggerContainer}
     >
-      <div className="flex justify-between gap-20">
-        <div className="flex flex-col gap-4 w-1/2">
+      <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-20">
+        <motion.div
+          variants={slideInLeft}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="flex flex-col gap-4 w-full md:w-1/2"
+        >
           <p className="font-medium text-text tracking-[1.4px] text-sm">
             THE ENGINEER
           </p>
@@ -23,8 +36,14 @@ const About = () => {
             type-safety and React's best practices to create modular, reusable
             components that stand the test of time.
           </p>
-        </div>
-        <div className="flex flex-col gap-12 pl-8">
+        </motion.div>
+        <motion.div
+          variants={slideInRight}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="flex flex-col gap-8 md:gap-12 pt-4 md:pt-0 md:pl-8 w-full md:w-auto"
+        >
           <div className="flex flex-col gap-1">
             <p className="font-medium text-text tracking-[1.4px] text-sm">
               EDUCATION
@@ -53,9 +72,9 @@ const About = () => {
               products.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
