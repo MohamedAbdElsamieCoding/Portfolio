@@ -1,12 +1,11 @@
-import { MdOutlineOpenInNew } from "react-icons/md";
-import { PiBracketsAngleLight } from "react-icons/pi";
 import { motion } from "framer-motion";
 import {
-  fadeInUp,
   slideInLeft,
   slideInRight,
   staggerContainer,
 } from "../../animations/variants";
+import ProjectCard from "./ProjectCard";
+
 const Work = () => {
   return (
     <motion.section
@@ -31,6 +30,9 @@ const Work = () => {
             Digital Craftsmanship
           </h1>
         </motion.div>
+
+        <div className="hidden md:flex h-0.5 w-1/6 bg-neutral" />
+
         <motion.p
           variants={slideInRight}
           initial="hidden"
@@ -42,91 +44,36 @@ const Work = () => {
           scale.
         </motion.p>
       </div>
-      <motion.div
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        className="grid grid-cols-1 md:grid-cols-2 gap-8"
-      >
-        <div className="bg-[#111827] rounded-xl flex flex-col gap-4 overflow-hidden p-4 md:p-6 border border-text/20">
-          <div className="relative h-90 overflow-hidden rounded-2xl">
-            <img
-              src="/bg.jpg"
-              className="absolute inset-0 h-full object-cover blur-sm scale-110"
-            />
-
-            <img
-              src="/nidaa.png"
-              className="relative z-10 h-full object-contain grayscale"
-            />
-
-            <div className="absolute inset-0 bg-black/40 z-20" />
-          </div>
-
-          <div className="px-3 py-1 border border-secondary w-fit mx-0 md:mx-4 mb-4 rounded-full">
-            <p className="text-secondary">TypeScript</p>
-          </div>
-          <div className="flex flex-col gap-2">
-            <h1 className="text-second-text font-medium text-2xl font-headline">
-              Nidaa Prayer Times App
-            </h1>
-            <div className="w-16 h-0.5 bg-secondary" />
-          </div>
-          <p className="text-text text-base font-headline">
-            A high-precision utility for community prayer schedules featuring
-            global location awareness and offline first architecture.
-          </p>
-          <div className="flex items-center gap-6">
-            <button className="flex gap-2 items-center text-text cursor-pointer">
-              <p className="text-sm">Live Demo</p>
-              <MdOutlineOpenInNew />
-            </button>
-            <button className="flex gap-2 items-center text-text cursor-pointer">
-              <p className="text-sm">GitHub</p>
-              <PiBracketsAngleLight />
-            </button>
-          </div>
-        </div>
-        <div className="bg-[#111827] rounded-xl flex flex-col gap-4 overflow-hidden p-6 border border-text/20">
-          <div className="relative h-90 overflow-hidden rounded-2xl">
-            <img
-              src="/bg.jpg"
-              className="absolute inset-0 h-full object-cover blur-sm scale-110"
-            />
-
-            <img
-              src="/stellar-store.png"
-              className="relative z-10 h-full object-contain grayscale"
-            />
-
-            <div className="absolute inset-0 bg-black/40 z-20" />
-          </div>
-
-          <div className="px-3 py-1 border border-secondary w-fit mx-4 mb-4 rounded-full">
-            <p className="text-secondary">TypeScript</p>
-          </div>
-          <div className="flex flex-col gap-2">
-            <h1 className="text-second-text font-medium text-2xl font-headline">
-              Stellar Store E-commerce
-            </h1>
-            <div className="w-16 h-0.5 bg-secondary" />
-          </div>
-          <p className="text-text text-base font-headline">
-            A premium full-stack shopping destination with complex cart logic
-            and secure checkout integration.
-          </p>
-          <div className="flex items-center gap-6">
-            <button className="flex gap-2 items-center text-text cursor-pointer">
-              <p className="text-sm">Live Demo</p>
-              <MdOutlineOpenInNew />
-            </button>
-            <button className="flex gap-2 items-center text-text cursor-pointer">
-              <p className="text-sm">GitHub</p>
-              <PiBracketsAngleLight />
-            </button>
-          </div>
-        </div>
-      </motion.div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <ProjectCard
+          title="Nidaa Prayer Times App"
+          tech="TypeScript"
+          image="/nidaa.jpg"
+          description="A high-precision utility for community prayer schedules featuring
+            global location awareness and offline first architecture."
+          gitHubOnClick={() => {}}
+          liveOnClick={() => {}}
+        />
+        <ProjectCard
+          title="Stellar Store E-commerce"
+          tech="TypeScript"
+          image="/stellar-store.jpg"
+          description="A premium full-stack shopping destination with complex cart logic
+            and secure checkout integration."
+          gitHubOnClick={() => {}}
+          liveOnClick={() => {}}
+        />
+        <ProjectCard
+          title="Movies Search Website"
+          tech="TypeScript"
+          image="/movies-web-app.jpg"
+          description="A premium cinematic discovery platform with real-time TMDB API integration and
+           advanced fluid search. Features secure user authentication alongside a persistent favorites dashboard to deliver a seamless,
+            high-performance streaming-companion experience."
+          gitHubOnClick={() => {}}
+          liveOnClick={() => {}}
+        />
+      </div>
     </motion.section>
   );
 };

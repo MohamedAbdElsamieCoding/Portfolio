@@ -7,6 +7,8 @@ import {
   staggerContainer,
 } from "../../animations/variants";
 import { AnimatedText } from "../../helpers/AnimatedText";
+import { scrollToSection } from "../../helpers/scrollToSection";
+import { focusContactForm } from "../../helpers/focusContactForm";
 
 const HeroSection = () => {
   return (
@@ -74,6 +76,7 @@ const HeroSection = () => {
             initial="hidden"
             animate="visible"
             className="flex items-center gap-3 text-[#6C4F00] bg-primary rounded-full px-6 md:px-10 py-3 md:py-4"
+            onClick={() => scrollToSection("work")}
           >
             <p className="font-bold text-sm tracking-[1.4px]">View My Work</p>
             <FaArrowRight />
@@ -82,7 +85,8 @@ const HeroSection = () => {
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
-            className="flex items-center gap-3 text-primary rounded-full px-6 md:px-10 py-3 md:py-4 border-2 border-primary "
+            className="flex items-center gap-3 text-primary rounded-full px-6 md:px-10 py-3 md:py-4 border-2 border-primary"
+            onClick={() => focusContactForm()}
           >
             Get In Touch
           </motion.button>

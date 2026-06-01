@@ -82,6 +82,7 @@ const Contact = () => {
 
         <form className="flex flex-col gap-6 w-full">
           <input
+            id="name"
             type="text"
             placeholder="Your Name"
             className=" w-full px-5 py-5 rounded-2xl border border-white/10 bg-white/3 text-white placeholder:text-white/30 placeholder:text-lg placeholder:font-headline focus:outline-none focus:border-primary focus:bg-white/5 transition-all duration-300"
@@ -94,7 +95,7 @@ const Contact = () => {
           />
 
           <textarea
-            placeholder="Tell me about your project"
+            placeholder="Tell me about your project or idea..."
             rows={7}
             className="w-full px-5 py-5 rounded-2xl border border-white/10 bg-white/3 text-white placeholder:text-white/30 placeholder:text-lg placeholder:font-headline resize-none focus:outline-none focus:border-primary focus:bg-white/5 transition-all duration-300"
           />

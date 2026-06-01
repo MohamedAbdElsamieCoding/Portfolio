@@ -2,12 +2,16 @@ import { motion } from "framer-motion";
 import { navLinks } from "./navbar.service";
 import { useState, useEffect } from "react";
 import { fadeInOut } from "../../animations/variants";
+import { clsx } from "clsx";
 
 const Navbar = () => {
   const [active, setActive] = useState("work");
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+
       const scrollY = window.scrollY + 150;
 
       navLinks.forEach((link) => {
@@ -26,12 +30,16 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <motion.nav
       variants={fadeInOut}
       initial="hidden"
       animate="visible"
-      className="fixed top-0 left-0 w-full py-3 md:py-4 px-4 md:px-20 bg-[#0C1725] shadow-lg shadow-primary/4 z-50"
+      className={clsx(
+        "fixed top-0 left-0 w-full px-4 md:px-20 bg-[#0C1725]/95 backdrop-blur-md shadow-lg shadow-primary/4 z-50 transition-all duration-300",
+        scrolled ? "py-2" : "py-4",
+      )}
     >
       <div className="flex justify-between items-center md:py-6">
         <h1 className="text-primary font-bold tracking-[-1.2px] leading-7 md:leading-[33.6px] cursor-default font-headline text-sm md:text-base">
@@ -53,7 +61,7 @@ const Navbar = () => {
                     transition={{
                       type: "spring",
                       stiffness: 300,
-                      damping: 40,
+                      damping: 35,
                     }}
                   />
                 )}
@@ -61,9 +69,14 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <button className="bg-primary px-4 md:px-6 py-2 rounded-full text-neutral font-bold text-sm tracking-[1.4px]">
-          Hire Me
-        </button>
+        <a
+          href="/Mohamed_Amr_Frontend Developer.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-primary px-4 md:px-6 py-2 rounded-full text-neutral font-bold text-sm tracking-[1.4px]"
+        >
+          Download CV
+        </a>
       </div>
     </motion.nav>
   );
