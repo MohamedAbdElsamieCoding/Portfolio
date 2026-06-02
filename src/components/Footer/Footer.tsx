@@ -14,6 +14,7 @@ const Footer = () => {
         <p className="tracking-[-0.7px] font-black text-sm">ARCHITECT.DEV</p>
         <ul className="flex flex-wrap md:flex-nowrap gap-4 md:gap-10 text-text font-medium text-xs justify-center md:justify-start">
           <li
+            className="cursor-pointer"
             onClick={() => {
               window.open(
                 "https://github.com/MohamedAbdElsamieCoding/portfolio",
@@ -24,6 +25,7 @@ const Footer = () => {
             Source Code
           </li>
           <li
+            className="cursor-pointer"
             onClick={() => {
               window.open(
                 "https://www.linkedin.com/in/mohamed-abd-elsamie/",
@@ -34,6 +36,7 @@ const Footer = () => {
             LinkedIn
           </li>
           <li
+            className="cursor-pointer"
             onClick={() => {
               window.open(
                 "https://github.com/MohamedAbdElsamieCoding",
