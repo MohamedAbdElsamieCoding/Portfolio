@@ -1,11 +1,9 @@
 import { motion } from "framer-motion";
 import { textContainer, letterAnimation } from "../animations/variants";
+import type { AnimatedTextProps } from "../types/animatedText.type";
 
-interface Props {
-  text: string;
-}
 
-export const AnimatedText = ({ text }: Props) => (
+export const AnimatedText = ({ text }: AnimatedTextProps) => (
   <motion.span variants={textContainer}>
     {text.split("").map((char, index) => (
       <motion.span

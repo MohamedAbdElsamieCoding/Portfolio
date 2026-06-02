@@ -3,7 +3,36 @@ import { IoMdPersonAdd } from "react-icons/io";
 import { SiGithub } from "react-icons/si";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "../../animations/variants";
+import { useState, type SyntheticEvent } from "react";
+import { toast } from "sonner";
+import { sendContactEmail } from "./contact.service";
+
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: SyntheticEvent) => {
+    e.preventDefault();
+    const toastId = toast.loading("Sending message...");
+
+    try {
+      await sendContactEmail(formData);
+
+      toast.success("Message sent successfully!", { id: toastId });
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to send message", { id: toastId });
+    }
+  };
+
   return (
     <motion.section
       variants={staggerContainer}
@@ -80,27 +109,42 @@ const Contact = () => {
           </h1>
         </div>
 
-        <form className="flex flex-col gap-6 w-full">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6 w-full">
           <input
             id="name"
             type="text"
             placeholder="Your Name"
+            value={formData.name}
+            onChange={(e) => {
+              setFormData({ ...formData, name: e.target.value });
+            }}
             className=" w-full px-5 py-5 rounded-2xl border border-white/10 bg-white/3 text-white placeholder:text-white/30 placeholder:text-lg placeholder:font-headline focus:outline-none focus:border-primary focus:bg-white/5 transition-all duration-300"
           />
 
           <input
             type="email"
             placeholder="Email Address"
+            value={formData.email}
+            onChange={(e) => {
+              setFormData({ ...formData, email: e.target.value });
+            }}
             className="w-full px-5 py-5 rounded-2xl border border-white/10 bg-white/3 text-white placeholder:text-white/30 placeholder:text-lg placeholder:font-headline focus:outline-none focus:border-primary focus:bg-white/5 transition-all duration-300"
           />
 
           <textarea
             placeholder="Tell me about your project or idea..."
             rows={7}
+            value={formData.message}
+            onChange={(e) =>
+              setFormData({ ...formData, message: e.target.value })
+            }
             className="w-full px-5 py-5 rounded-2xl border border-white/10 bg-white/3 text-white placeholder:text-white/30 placeholder:text-lg placeholder:font-headline resize-none focus:outline-none focus:border-primary focus:bg-white/5 transition-all duration-300"
           />
 
-          <button className="mt-2 w-full md:w-fit px-8 py-4 rounded-xl bg-primary text-black font-semibold hover:scale-[1.02] transition">
+          <button
+            type="submit"
+            className="mt-2 w-full md:w-fit px-8 py-4 rounded-xl bg-primary text-black font-semibold hover:scale-[1.02] transition"
+          >
             Send Message
           </button>
         </form>

@@ -51,8 +51,15 @@ const Work = () => {
           image="/nidaa.jpg"
           description="A high-precision utility for community prayer schedules featuring
             global location awareness and offline first architecture."
-          gitHubOnClick={() => {}}
-          liveOnClick={() => {}}
+          gitHubOnClick={() => {
+            window.open(
+              "https://github.com/MohamedAbdElsamieCoding/nidaa",
+              "_blank",
+            );
+          }}
+          liveOnClick={() => {
+            window.open("https://nidaa-one.vercel.app/", "_blank");
+          }}
         />
         <ProjectCard
           title="Stellar Store E-commerce"
@@ -60,8 +67,15 @@ const Work = () => {
           image="/stellar-store.jpg"
           description="A premium full-stack shopping destination with complex cart logic
             and secure checkout integration."
-          gitHubOnClick={() => {}}
-          liveOnClick={() => {}}
+          gitHubOnClick={() => {
+            window.open(
+              "https://github.com/MohamedAbdElsamieCoding/stellar-store",
+              "_blank",
+            );
+          }}
+          liveOnClick={() => {
+            window.open("https://stellar-store-alpha.vercel.app/", "_blank");
+          }}
         />
         <ProjectCard
           title="Movies Search Website"
@@ -70,8 +84,15 @@ const Work = () => {
           description="A premium cinematic discovery platform with real-time TMDB API integration and
            advanced fluid search. Features secure user authentication alongside a persistent favorites dashboard to deliver a seamless,
             high-performance streaming-companion experience."
-          gitHubOnClick={() => {}}
-          liveOnClick={() => {}}
+          gitHubOnClick={() => {
+            window.open(
+              "https://github.com/MohamedAbdElsamieCoding/movies-search-website",
+              "_blank",
+            );
+          }}
+          liveOnClick={() => {
+            window.open("https://auteur-cinema.vercel.app/", "_blank");
+          }}
         />
       </div>
     </motion.section>

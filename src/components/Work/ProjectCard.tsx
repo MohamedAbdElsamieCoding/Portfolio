@@ -2,15 +2,8 @@ import { MdOutlineOpenInNew } from "react-icons/md";
 import { PiBracketsAngleLight } from "react-icons/pi";
 import { motion } from "framer-motion";
 import { fadeInUp } from "../../animations/variants";
+import type { ProjectCardProps } from "../../types/projectCard.type";
 
-interface Props {
-  image: string;
-  tech: string;
-  title: string;
-  description: string;
-  liveOnClick: React.MouseEventHandler<HTMLButtonElement>;
-  gitHubOnClick: React.MouseEventHandler<HTMLButtonElement>;
-}
 
 const ProjectCard = ({
   image,
@@ -19,7 +12,7 @@ const ProjectCard = ({
   description,
   liveOnClick,
   gitHubOnClick,
-}: Props) => {
+}: ProjectCardProps) => {
   return (
     <motion.div
       variants={fadeInUp}
