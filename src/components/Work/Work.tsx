@@ -48,7 +48,7 @@ const Work = () => {
         <ProjectCard
           title="Nidaa Prayer Times App"
           tech="TypeScript"
-          image="/nidaa.jpg"
+          image="/nidaa.png"
           description="A high-precision utility for community prayer schedules featuring
             global location awareness and offline first architecture."
           gitHubOnClick={() => {
@@ -64,7 +64,7 @@ const Work = () => {
         <ProjectCard
           title="Stellar Store E-commerce"
           tech="TypeScript"
-          image="/stellar-store.jpg"
+          image="/stellar-store.png"
           description="A premium full-stack shopping destination with complex cart logic
             and secure checkout integration."
           gitHubOnClick={() => {
@@ -80,7 +80,7 @@ const Work = () => {
         <ProjectCard
           title="Movies Search Website"
           tech="TypeScript"
-          image="/movies-web-app.jpg"
+          image="/movies-web-app.png"
           description="A premium cinematic discovery platform with real-time TMDB API integration and
            advanced fluid search. Features secure user authentication alongside a persistent favorites dashboard to deliver a seamless,
             high-performance streaming-companion experience."
